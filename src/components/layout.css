@@ -7,6 +7,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
 }
 article,
 aside,
@@ -619,4 +620,16 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+/* CUSTOM STYLES */
+
+.gatsby-image-wrapper::after
+{
+ box-shadow: inset 0px 0px 73px 67px #000000;
+ content: '';
+ display: block;
+ height: 100%;
+ position: absolute;
+ top: 0;
+ width: 100%;
 }
