@@ -13,12 +13,12 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const RotatingLogo = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "AL-Logo.png" }) {
+      logo: file(relativePath: { eq: "al-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth:864 ) {
+          fluid(maxWidth:400 ) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -26,7 +26,13 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <div className="logo-wrapper">
+      <div className="rotating-logo">
+          <Img fluid={data.logo.childImageSharp.fluid} />
+      </div>
+    </div>
+  )
 }
 
-export default Image
+export default RotatingLogo
